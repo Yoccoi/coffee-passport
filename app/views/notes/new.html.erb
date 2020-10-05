@@ -18,6 +18,7 @@
     </div>
     <div class="note note-image">
       <h3>画像</h3>
+      <%= image_tag note.image.variant(resize: '500*500'), class: 'note-image' if note.image.attached? %>
     </div>
 
     <div class="note note-bitter">
