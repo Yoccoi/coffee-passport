@@ -1,0 +1,52 @@
+<div class="note-wrapper">
+  <%= form_with model: @note, local: true do |f| %>
+    <%= render "shared/error_messages", model: @note %>
+
+    <div class="note note-title">
+      <h1>記録</h1>
+    </div>
+
+    <div class="note note-text">
+      <h3>銘柄</h3>
+    </div>
+
+    <div class="note note-rating">
+      <h3>総合評価</h3>
+    </div>
+    <div class="note note-comment">
+      <h3>コメント</h3>
+    </div>
+    <div class="note note-image">
+      <h3>画像</h3>
+    </div>
+
+    <div class="note note-bitter">
+      <h3>苦味</h3>
+    </div>
+    <div class="note note-acidity">
+      <h3>酸味</h3>
+    </div>
+    <div class="note note-aroma">
+      <h3>香り</h3>
+    </div>
+    <div class="note note-body">
+      <h3>ボディ</h3>
+    </div>
+
+    <div class="note note-rost-date">
+      <h3>焙煎日</h3>
+    </div>
+    <div class="note note-grams">
+      <h3>グラム</h3>
+    </div>
+      <%= f.text_field :grams, class:"input-default", id:"item-grams", placeholder:"(半角数字)", maxlength:"4" %>
+    <div class="note note-price">
+      <h3>価格</h3>
+    </div>
+      <%= f.text_field :price, class:"input-default", id:"item-price", placeholder:"(半角数字)", maxlength:"6" %>
+
+    <div class='note-btn'>
+      <%= f.submit "完了" ,class:"note-red-btn" %>
+    </div>
+  <% end %>
+</div>
