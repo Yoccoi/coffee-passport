@@ -3,5 +3,5 @@ class Note < ApplicationRecord
   has_one_attached :image
 
   validates :name, presence: true
-  validates :content, presence: true
+  validates :comment, presence: true
 end
