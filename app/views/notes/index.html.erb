@@ -1,6 +1,48 @@
 <div class="top-wrapper">
-  <%= image_tag "coffee_label02.jpg", class:"top-pic" %>
+  <h1 class="top-message">日々の暮らしに美味しい<span class="top-message-b">珈琲</span>を</h1>
+  <h2 class="second-message">
+    <span class="chr-ka">カ</span><span class="chr-ra">ラ</span><span class="chr-fu">フ</span><span class="chr-ru">ル</span>な味わいの記録には<span class="top-message-b">CoffeePassport</span>を
+  </h2>
+  <%= image_tag "coffee_label.jpg", class:"top-pic" %>
   <div class="top-img-btn">
-    <%= link_to "　記録する　", new_note_path, class:"top-img-p" %>
+    <%= link_to " RECORD ", new_note_path, class:"top-img-p" %>
   </div>
 </div>
+
+<div id="popup">
+  <div class="popup-content">
+    <p>ポップアップ</p>
+    <button>閉じる</button>
+  </div>
+</div>
+
+<div>
+  <%= image_tag "label-tag.png", class:'label-tag-a'%>
+</div>
+<% if @notes.present? %>
+  <% @notes.each_slice(3) do |note1, note2, note3| %>
+  <div class="notes-wrapper0">
+    <div class="notes-wrapper1">
+      <%= image_tag note1.image.variant(resize: '350x400'), class: 'note-img' if note1.image.attached? %>
+      <%= render "shared/star", model: note1 %>
+    </div>
+  <% if note2.present? %>
+    <div class="notes-wrapper2">
+      <%= image_tag note2.image.variant(resize: '350x400'), class: 'note-img' if note2.image.attached? %>
+      <%= render "shared/star", model: note2 %>
+    </div>
+  <% end %>
+  <% if note3.present? %>
+    <div class="notes-wrapper3">
+      <%= image_tag note3.image.variant(resize: '350x400'), class: 'note-img' if note3.image.attached? %>
+      <%= render "shared/star", model: note3 %>
+    </div>
+  <% end %>
+  </div>
+  <% end %>
+<% end %>
+
+
+<%# <div>
+  <%= image_tag "logo-CoffeePassport.png", class:"bottom-pic" %>
+<%# </div> %> 

@@ -1,0 +1,205 @@
+<div class="note-wrapper">
+  <div class="note-beens">
+    <%= form_with(model: @note, url: notes_path, local: true) do |f| %>
+      <%= render "shared/error_messages", model: @note %>
+
+      <div class="note note-title">
+        <h1>記録</h1>
+      </div>
+  <%# -------- コーヒー豆の情報入力フォーム -------- %>
+      <div class="note note-text">
+        <h3>銘柄<span class="required"> (必須)</span></h3>
+      </div>
+      <div class="input-default">
+        <%= f.text_field :name, id:"item-name", placeholder:"例) 〇〇ブレンド" %>
+      </div>
+    
+      <div class="note note-rating", id="star">
+        <h3>総合評価<span class="required"> (必須)</span></h3>
+        <%= f.hidden_field :rating %>
+      </div>
+      <script>
+        $('#star').raty({
+          size      : 36,
+          starOff   : '<%= asset_path('star-off.png') %>',
+          starOn    : '<%= asset_path('star-on.png') %>',
+          starHalf  : '<%= asset_path('star-half.png') %>',
+          scoreName : 'note[rating]',
+          hints     : ['bad', 'poor', 'regular', 'good', 'excellent'],
+          half      : true,
+        });
+      </script>
+    
+      <div class="note note-comment">
+        <h3>コメント</h3>
+      </div>
+      <div class="input-default">
+        <%= f.text_area :comment, id:"item-text", placeholder:"", rows: "3" %>
+      </div>
+
+      <div class="note note-image">
+        <h3>画像</h3>
+        <p>クリックしてファイルをアップロード</p>
+        <div class="click-upload">
+          <%= f.file_field :image, id:"item-image" %>
+        </div>
+      </div>
+
+      <div class="note note-bitter", id="star1">
+        <h3 class="chr-ka">苦味</h3>
+        <%= f.hidden_field :bitter %>
+      </div>
+      <script>
+        $('#star1').raty({
+          size      : 36,
+          starOff   : '<%= asset_path('star-off.png') %>',
+          starOn    : '<%= asset_path('star-on.png') %>',
+          starHalf  : '<%= asset_path('star-half.png') %>',
+          scoreName : 'note[bitter]',
+          half      : true,
+        });
+      </script>
+
+      <div class="note note-acidity", id="star2">
+        <h3 class="chr-ra">酸味</h3>
+        <%= f.hidden_field :acidity %>      
+      </div>
+      <script>
+        $('#star2').raty({
+          size      : 36,
+          starOff   : '<%= asset_path('star-off.png') %>',
+          starOn    : '<%= asset_path('star-on.png') %>',
+          starHalf  : '<%= asset_path('star-half.png') %>',
+          scoreName : 'note[acidity]',
+          half      : true,
+        });
+      </script>
+
+      <div class="note note-aroma", id="star3">
+        <h3 class="chr-fu">香り</h3>
+        <%= f.hidden_field :aroma %>
+      </div>
+      <script>
+        $('#star3').raty({
+          size      : 36,
+          starOff   : '<%= asset_path('star-off.png') %>',
+          starOn    : '<%= asset_path('star-on.png') %>',
+          starHalf  : '<%= asset_path('star-half.png') %>',
+          scoreName : 'note[aroma]',
+          half      : true,
+        });
+      </script>
+    
+      <div class="note note-body", id="star4">
+        <h3 class="chr-ru">ボディ</h3>
+        <%= f.hidden_field :body %>
+      </div>
+      <script>
+        $('#star4').raty({
+          size      : 36,
+          starOff   : '<%= asset_path('star-off.png') %>',
+          starOn    : '<%= asset_path('star-on.png') %>',
+          starHalf  : '<%= asset_path('star-half.png') %>',
+          scoreName : 'note[body]',
+          half      : true,
+        });
+      </script>
+
+      <div class="note note-rost-date">
+        <h3>焙煎日</h3>
+      </div>
+      <div class='input-birth-wrap'>
+        <%= raw sprintf(
+                  f.date_select(
+                    :roast_date,
+                    class:'select-birth',
+                    id:"roast-date",
+                    use_month_numbers: true,
+                    prompt:'--',
+                    start_year: (Time.now.year),
+                    end_year: (Time.now.year - 1),
+                    date_separator: '%s'),
+                  "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+      </div>
+
+      <div class="note note-grams">
+        <h3>グラム</h3>
+      </div>
+      <div class="input-default">    
+        <%= f.text_field :grams, id:"item-grams", placeholder:"(半角数字)", maxlength:"4" %>g
+      </div>
+
+      <div class="note note-price">
+        <h3>価格</h3>
+      </div>
+      <div class="input-default">
+        <%= f.text_field :price, id:"item-price", placeholder:"(半角数字)", maxlength:"6" %>円
+      </div>
+
+      <div class='note-btn'>
+        <%= f.submit "完了", class:"note-send-btn" %>
+      </div>
+    <% end %>
+  </div>
+  <%# -------- 購入店舗情報入力フォーム -------- %>
+  <div class="note-shop">
+    <%= form_with(model: @shop, url: shop_index_path, local: true) do |f| %>
+    <div class="shop-name">
+      <h3>購入店舗名<span class="required"> (必須)</span></h3>
+    </div>
+    <div>
+      <%= f.text_field :name, placeholeder:"" %>
+    </div>
+    <h2>購入店舗を検索</h2>
+    <div class="search-place-id">
+      <div class="google-maps">
+      <%# -------- googleMaps -------- %>
+        <div style="display: none">
+          <input
+            id="pac-input"
+            class="controls"
+            type="text"
+            placeholder="Enter a location"
+          />
+          </div>
+          <div id="map"></div>
+          <div id="infowindow-content">
+            <span id="place-name" class="title"></span><br />
+            <strong>Place ID</strong>: <span id="place-id"></span><br />
+            <span id="place-address"></span>
+          </div>
+        </div>
+      <%# //-------- googleMaps -------- %>
+      </div>
+      <div class="place-id-form">
+        <div class="note form-name">
+          <h3>Place ID</h3>
+          <p>検索後、お店のPlace IDを入力してください</p>
+        </div>
+        <%= f.text_area :location, class: "pid-form", placeholder:"例) ChIJDVyaFskIAWARPndsL7Y3IFI" %>
+      </div>
+    </div>
+
+    <div class="note note-rost-date">
+      <h3>購入日</h3>
+    </div>
+    <div class='input-birth-wrap'>
+      <%= raw sprintf(
+                 f.date_select(
+                  :purchase_date,
+                  class:'select-birth',
+                  id:"roast-date",
+                  use_month_numbers: true,
+                  prompt:'--',
+                  start_year: (Time.now.year),
+                  end_year: (Time.now.year - 1),
+                  date_separator: '%s'),
+                  "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+    </div>
+
+    <div class='note-btn'>
+      <%= f.submit "完了", class:"note-send-btn" %>
+    </div>
+    <% end %>
+  </div>
+</div>

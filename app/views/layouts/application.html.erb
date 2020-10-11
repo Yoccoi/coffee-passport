@@ -2,11 +2,16 @@
 <html>
   <head>
     <title>CoffeePassport</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2akin344XG-e6n-5YqHpKH6sWPVy5LeU&callback=initMap&libraries=places&v=weekly"
+      defer
+    ></script>
   </head>
 
   <body>

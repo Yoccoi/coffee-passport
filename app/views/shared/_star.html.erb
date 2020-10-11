@@ -1,0 +1,13 @@
+<div id="star-rate-<%= model.id %>" class="index-star"></div>
+<script>
+$('#star-rate-<%= model.id %>').raty({
+            starOff   : '<%= asset_path('star-off.png') %>',
+            starOn    : '<%= asset_path('star-on.png') %>',
+            starHalf  : '<%= asset_path('star-half.png') %>',
+            hints     : ['bad', 'poor', 'regular', 'good', 'excellent'],
+            half      : true,
+            readOnly  : true,
+            score     : <%= model.rating %>,
+});
+</script>
+
