@@ -3,6 +3,4 @@ class Note < ApplicationRecord
   has_one_attached :image
   has_one :shop
 
-  validates :name, presence: true
-  validates :rating, presence: true
 end
