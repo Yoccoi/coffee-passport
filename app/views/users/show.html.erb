@@ -1,0 +1,54 @@
+<div class="mypage-wrapper">
+  <div class="mypage-title">
+    <h1><%= @user.nickname %>のPassport</h1>
+  </div>
+  <%# ------ ユーザー登録情報 ------ %>
+  <% if user_signed_in? && @user == current_user %>
+    <table class="personal-info">
+      <tr>
+        <th>Email</th>
+        <th>誕生日</th>
+      </tr>
+      <tr>
+        <td><%= @user.email %></td>
+        <td><%= @user.birthday %></td>
+      </tr>
+    </table>
+    <div class="edit">
+      <%= link_to "編集", edit_user_path(current_user) %>
+    </div>
+  <% end %>
+
+  <%# ------ 記録情報 ------ %>
+  <% if @notes.present? %>
+    <% @notes.each_slice(3) do |note1, note2, note3| %>
+    <div class="notes-wrapper0">
+      <div class="notes-wrapper1">
+      <%= link_to(note_path(id:note1)) do %>
+        <%= image_tag note1.image.variant(resize: '350x400'), class: 'note-img' if note1.image.attached? %>
+        <%= render "shared/star", model: note1 %>
+      <% end %>
+      </div>
+    <% if note2.present? %>
+      <div class="notes-wrapper2">
+      <%= link_to(note_path(id:note2)) do %>    
+        <%= image_tag note2.image.variant(resize: '350x400'), class: 'note-img' if note2.image.attached? %>
+        <%= render "shared/star", model: note2 %>
+      <% end %>
+      </div>
+    <% end %>
+    <% if note3.present? %>
+      <div class="notes-wrapper3">
+      <%= link_to(note_path(id:note3)) do %>
+        <%= image_tag note3.image.variant(resize: '350x400'), class: 'note-img' if note3.image.attached? %>
+        <%= render "shared/star", model: note3 %>
+      <% end %>
+      </div>
+    <% end %>
+    </div>
+    <% end %>
+  <% end %>
+</div>
+
+
+

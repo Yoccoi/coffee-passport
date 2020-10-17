@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'notes#index'
+  resources :users, only: [:show, :edit, :update]
+  get '/mypage' => 'users#mypage'
   resources :notes
-  resources :shop, only: [:new, :create, :index, :show, :edit]
+  resources :shops
 end
