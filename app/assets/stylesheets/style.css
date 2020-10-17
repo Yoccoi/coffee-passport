@@ -1028,7 +1028,8 @@ form input[type="submit"]:hover {
 }
 
 
-/* ---- トップ(index)ページCSS ---- */
+
+/* ------ トップ(index)ページCSS ------ */
 
 .top-wrapper {
   position: relative;
@@ -1040,7 +1041,7 @@ form input[type="submit"]:hover {
 }
 
 .top-message-b {
-  color: burlywood;
+  color: #deb887;
 }
 
 .second-message {
@@ -1098,10 +1099,24 @@ form input[type="submit"]:hover {
   cursor: pointer;
 }
 
+.label-tag {
+  display: flex;
+  position: relative;
+}
+
 .label-tag-a {
-  margin-top: 250px;
-  width: 300px;
+  margin-top: 100px;
+  width: 270px;
   height: 67px;
+}
+
+.label-tag p {
+  display: inline-block;
+  position: absolute;
+  color: white;
+  font-weight: bold;
+  top: 105px;
+  left: 40px;
 }
 
 .notes-wrapper0 {
@@ -1156,6 +1171,7 @@ form input[type="submit"]:hover {
   margin: 0 auto;
 }
 
+
 /* ニューモーフィズム */
 /* .bottom-pic {
   background-color: #f5f5f3; */
@@ -1181,14 +1197,7 @@ form input[type="submit"]:hover {
 
 
 
-
-
-
-
-
-
-
-/* ---- 記録(edit)ページCSS ---- */
+/* ------ 記録(new)ページCSS ------ */
 
 .note-wrapper {
   padding: 50px 150px 0 150px;
@@ -1223,6 +1232,78 @@ form input[type="submit"]:hover {
   width: 300px;
 }
 
+
+
+
+/* ---- 詳細(show)ページCSS ---- */
+
+.show-content-note {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.show-title h1 {
+  margin-top:20px;
+  padding-bottom: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.show-img {
+  margin: 30px 50px;
+}
+
+table {
+  width: 50%;
+  margin: 50px;
+  table-layout: auto;
+  /* table-layout: fixed; */
+  border-collapse: collapse;
+}
+
+table th {
+  background-color: white;
+}
+
+.show-content-shop {
+  display: flex;
+  justify-content: space-between;
+}
+
+.show-gmap {
+  margin: 50px auto;
+  }
+
+.back-btn {
+  background-color: white;
+  margin-left: 150px;
+  text-align: center;
+}
+
+
+
+/* ---- ユーザー情報(mypage)ページCSS ---- */
+
+.mypage-title {
+  padding-top: 50px;
+}
+
+.mypage-title h1 {
+  font-size: 20px;
+  text-align: center;
+}
+
+.personal-info {
+  margin: 50px auto;
+  text-align: center;
+}
+
+.edit {
+  text-align: right;
+  padding-right: 150px;
+}
 
 
 

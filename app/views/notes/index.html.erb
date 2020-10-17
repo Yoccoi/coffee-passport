@@ -9,33 +9,41 @@
   </div>
 </div>
 
-<div id="popup">
+<%# <div id="popup">
   <div class="popup-content">
     <p>ポップアップ</p>
     <button>閉じる</button>
   </div>
+</div> %>
+
+<div class="label-tag">
+  <%= image_tag "label-tag.png", class:'label-tag-a'%>
+  <p>みんなの記録</p>
 </div>
 
-<div>
-  <%= image_tag "label-tag.png", class:'label-tag-a'%>
-</div>
 <% if @notes.present? %>
   <% @notes.each_slice(3) do |note1, note2, note3| %>
   <div class="notes-wrapper0">
     <div class="notes-wrapper1">
+    <%= link_to(note_path(id:note1)) do %>
       <%= image_tag note1.image.variant(resize: '350x400'), class: 'note-img' if note1.image.attached? %>
       <%= render "shared/star", model: note1 %>
+    <% end %>
     </div>
   <% if note2.present? %>
     <div class="notes-wrapper2">
+    <%= link_to(note_path(id:note2)) do %>    
       <%= image_tag note2.image.variant(resize: '350x400'), class: 'note-img' if note2.image.attached? %>
       <%= render "shared/star", model: note2 %>
+    <% end %>
     </div>
   <% end %>
   <% if note3.present? %>
     <div class="notes-wrapper3">
+    <%= link_to(note_path(id:note3)) do %>
       <%= image_tag note3.image.variant(resize: '350x400'), class: 'note-img' if note3.image.attached? %>
       <%= render "shared/star", model: note3 %>
+    <% end %>
     </div>
   <% end %>
   </div>
