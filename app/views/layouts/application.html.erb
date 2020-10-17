@@ -5,13 +5,15 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= include_gon %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2akin344XG-e6n-5YqHpKH6sWPVy5LeU&callback=initMap&libraries=places&v=weekly"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChboYpA_1VQDhmD-L71djpEkd2cTmzeoQ&language=ja&callback=initMap&libraries=places&v=weekly"
       defer
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
   </head>
 
   <body>
@@ -20,7 +22,7 @@
         <h1 class="grid-6"><a href="/">CoffeePassport</a></h1>
         <% if user_signed_in? %>
           <div class="user_nav grid-6">
-            <%= link_to current_user.nickname, "#", class: "user-nickname" %>
+            <%= link_to current_user.nickname, mypage_path, class: "user-nickname" %>
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "post" %>
           </div>
         <% else %>

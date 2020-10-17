@@ -1,13 +1,12 @@
 // This sample requires the Places library. Include the libraries=places
 // parameter when you first load the API. For example:
 // <script
-window.onload = function (){
-  initMap();
-}
+
+
 function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 34.985849, lng: 135.7587667 },
-    zoom: 14,
+    zoom: 12,
   });
   const input = document.getElementById("pac-input");
   const autocomplete = new google.maps.places.Autocomplete(input);
@@ -52,3 +51,7 @@ function initMap() {
     });
   });
 }
+
+window.addEventListener('load', function() {
+  initMap()
+});
