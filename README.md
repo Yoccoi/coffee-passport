@@ -1,6 +1,6 @@
 # 概要
-コーヒーが好きな人のための記録用アプリケーションです。
-ユーザー登録をすると自分の購入したコーヒー豆に関する情報が記録できます。
+コーヒーが好きな人のための記録用アプリケーションです。  
+ユーザー登録をすると自分の購入したコーヒー豆に関する情報が記録できます。  
 また、購入店舗を一緒に保存しておくことで他のユーザーにもおすすめが出来ます。
 
 # URL
@@ -9,11 +9,11 @@ https://coffee-passport.herokuapp.com/
 # テスト用アカウント
 
 ## テストアカウント
-Email: test@test
+Email: test@test  
 Password: 000000
 
 ## Basic認証
-ID: admin
+ID: admin  
 Password: 2222
 
 # 利用方法
@@ -46,10 +46,12 @@ Password: 2222
 - 購入店舗情報の記載
 
 # 実装した機能についてのGIFと説明
-- 星による簡単な評価機能
+- 星による簡単な評価機能  
 [![Image from Gyazo](https://i.gyazo.com/31f1a672008243b253bba49754dc6a55.gif)](https://gyazo.com/31f1a672008243b253bba49754dc6a55)
+
 - 視覚的に分かりやすいグラフ表記
 [![Image from Gyazo](https://i.gyazo.com/7281ca4194a86fff29f3c676b1848c74.gif)](https://gyazo.com/7281ca4194a86fff29f3c676b1848c74)
+
 - 地図による購入店舗情報の表示
 [![Image from Gyazo](https://i.gyazo.com/80072e6e907b3630e3f0d90c622da994.gif)](https://gyazo.com/80072e6e907b3630e3f0d90c622da994)
 
