@@ -58,12 +58,13 @@
   </div>
 
   <div class="show-content-shop">
-    
     <div id="gmap" class="show-gmap"></div>
-
   </div>
 
 </div>
 <div class="btn back-btn">
   <%= link_to "戻る", root_path %>
+</div>
+<div class="btn delete-btn">
+  <%= link_to "削除", note_path(@note.id), method: :delete, data: {confirm: '削除しますか？'} %>
 </div>

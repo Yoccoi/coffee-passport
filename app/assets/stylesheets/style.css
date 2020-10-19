@@ -1277,9 +1277,13 @@ table th {
   }
 
 .back-btn {
-  background-color: white;
   margin-left: 150px;
   text-align: center;
+}
+
+.delete-btn{
+  text-align: right;
+  margin-left: 900px;
 }
 
 
@@ -1305,7 +1309,22 @@ table th {
   padding-right: 150px;
 }
 
+.border {
+  border: 1px dotted gray;
+  margin-top: 40px;
+}
 
+/* ---- ユーザー情報編集ページCSS ---- */
+
+.user-edit-wrapper {
+  margin: 20px 150px;
+}
+
+.edit-prof-title h1 {
+  font-size: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
 
 /* その他CSS */
 

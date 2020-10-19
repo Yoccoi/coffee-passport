@@ -1,6 +1,9 @@
-<h1>プロフィール編集</h1>
-
-<%= form_with model: @user do |f| %>
-  <div>nickname<%= f.text_field :nickname %></div>
-  <div><%= f.submit "保存" %></div>
-<% end %>
+<div class="user-edit-wrapper">
+  <div class="edit-prof-title">
+    <h1>プロフィール編集</h1>
+  </div>
+  <%= form_with model: @user do |f| %>
+    <div>nickname<%= f.text_field :nickname %></div>
+    <div><%= f.submit "保存" %></div>
+  <% end %>
+</div>

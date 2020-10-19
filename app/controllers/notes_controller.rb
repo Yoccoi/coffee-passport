@@ -28,6 +28,13 @@ class NotesController < ApplicationController
     gon.shop = @shop
   end
 
+  def destroy
+    @note = Note.find(params[:id])
+    if @note.destroy
+      redirect_to root_path
+    end
+  end
+
   private
 
   def note_params
