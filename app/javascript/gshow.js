@@ -31,7 +31,7 @@
 function initMaps() { //Map's'
     const map = new google.maps.Map(document.getElementById("gmap"), {
       center: { lat: 34.985849, lng: 135.7587667 },
-      zoom: 12,
+      zoom: 11,
     });
     const request = {
       placeId: gon.shop.location,

@@ -1213,8 +1213,16 @@ form input[type="submit"]:hover {
   margin-top: 20px;
 }
 
+.click-upload {
+  width: 28%;
+}
+
 .required {
   color: #FA6B60;
+}
+
+.note-roast-date {
+  margin-top: 50px;
 }
 
 .input-default {
@@ -1223,7 +1231,31 @@ form input[type="submit"]:hover {
   justify-content: center;
 }
 
-.search-place-id {
+.gram-price {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+.note-grams {
+  width: 40%;
+}
+
+.note-price {
+  width: 40%;
+}
+
+.input-default-s {
+  display: flex;
+}
+
+.shop-name {
+  width: 700px;
+  margin: 40px 0 30px 0;
+}
+
+.shop-location {
   display: flex;
   justify-content: space-between;
 }
@@ -1232,7 +1264,13 @@ form input[type="submit"]:hover {
   width: 300px;
 }
 
+.note-roast-date {
+  margin-top: 30px;
+}
 
+.note-send-btn {
+  margin-top: 30px;
+}
 
 
 /* ---- 詳細(show)ページCSS ---- */
@@ -1256,7 +1294,7 @@ form input[type="submit"]:hover {
 }
 
 table {
-  width: 50%;
+  width: 60%;
   margin: 50px;
   table-layout: auto;
   /* table-layout: fixed; */
@@ -1267,9 +1305,17 @@ table th {
   background-color: white;
 }
 
+table td {
+  text-align: center;
+}
+
 .show-content-shop {
   display: flex;
   justify-content: space-between;
+}
+
+.rating-num {
+  text-align: center;
 }
 
 .show-gmap {
