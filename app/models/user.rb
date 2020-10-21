@@ -4,4 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :notes, dependent: :destroy
+
+  with_options presence: true do
+    validates :nickname
+    validates :email, uniqueness: { case_sensitive: false }
+    validates :password
+    validates :password_confirmation
+    validates :birthday
+  end
 end
