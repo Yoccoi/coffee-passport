@@ -1090,6 +1090,16 @@ form input[type="submit"]:hover {
   left: 575px;
 }
 
+@media screen and (max-width: 1440px) {
+  .top-img-btn {
+    height: calc(150 / 1440 * 100vw);
+    padding: calc(50 /1440 * 100vw);
+    font-size: calc(28 / 1440 * 100vw);
+    top: calc(1210 / 1440 * 100vw);
+    left: calc(575 / 1440 * 100vw);
+  }
+}
+
 .top-img-btn:hover {
   box-shadow:
   10px 10px 30px transparent,
