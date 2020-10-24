@@ -61,6 +61,9 @@ Password: 2222
 
 # データベース設計
 
+## ER図
+[![Image from Gyazo](https://i.gyazo.com/55f16b37b2c45cbf56ef049d32ff4a4b.png)](https://gyazo.com/55f16b37b2c45cbf56ef049d32ff4a4b)
+
 ## users テーブル
 
 | Column         | Type    | Options     |
