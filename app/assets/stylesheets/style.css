@@ -1204,9 +1204,6 @@ form input[type="submit"]:hover {
 
 
 
-
-
-
 /* ------ 記録(new)ページCSS ------ */
 
 .note-wrapper {
@@ -1233,6 +1230,50 @@ form input[type="submit"]:hover {
 
 .note-roast-date {
   margin-top: 50px;
+}
+
+.btn-mouseover:hover + .mouseover__box{
+  display: block;
+}
+.mouseover__box:hover{
+  display: block;
+}
+.mouseover__box{
+  display: none;
+  position: absolute;
+  top: 850px;
+  left: 500px;
+  width: 300px;
+  padding: 15px;
+  font-size: 13px;
+  background-color: #fff;
+  /* border: 1px solid #ccc; */
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.turn-right {
+  display: flex;
+}
+
+.bitter {
+  border: 1px solid #84d3ef;
+}
+
+.acidity {
+  border: 1px solid #b0d6b4;
+}
+
+.aroma {
+  border: 1px solid #fad681;
+}
+
+.body {
+  border: 1px solid #fbc3b1;
+}
+
+.mouseover__conts {
+  margin: -15px 0 0 10px;
 }
 
 .input-default {
