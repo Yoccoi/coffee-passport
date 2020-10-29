@@ -1,6 +1,7 @@
 class NoteShop
   include ActiveModel::Model
   attr_accessor :name, :rating, :comment, :image, :bitter, :acidity, :aroma, :body, :roast_date, :grams, :price, :user_id, :shop_name, :purchase_date, :location
+
   include ActiveRecord::AttributeAssignment
 
   with_options presence: true do
@@ -18,5 +19,4 @@ class NoteShop
     # お店の情報を保存
     shop = Shop.create(shop_name: shop_name, purchase_date: purchase_date, location: location, note_id: note.id)
   end
-
 end

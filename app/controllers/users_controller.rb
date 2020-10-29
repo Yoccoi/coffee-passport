@@ -12,9 +12,7 @@ class UsersController < ApplicationController
 
   def edit
     # 直リンク編集を避けるための条件分岐
-    unless @user == current_user
-      redirect_to user_path(@user)
-    end
+    redirect_to user_path(@user) unless @user == current_user
   end
 
   def update
