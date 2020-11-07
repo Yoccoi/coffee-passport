@@ -1,7 +1,3 @@
-// This sample requires the Places library. Include the libraries=places
-// parameter when you first load the API. For example:
-// <script
-
 
 function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
